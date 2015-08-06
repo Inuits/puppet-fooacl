@@ -7,9 +7,9 @@ describe 'fooacl::conf', :type => :define do
 
   context 'with an array as permissions' do
     let :params do {
-      permissions => ['user:myuser:rwx', 'group:mygroup:rwx'],
+      'permissions' => ['user:myuser:rwx', 'group:mygroup:rwx'],
     } end
-    it should contain_concat__fragment('/tmp/test.acl')
+    it { should contain_concat__fragment('/tmp/test.acl') }
   end
 end
 
